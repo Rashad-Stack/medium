@@ -1,6 +1,11 @@
-import { ReadersNav } from "../../components";
+import { ReadersNav, Recommendation } from "../../components";
 function Post() {
-  return <ReadersNav />;
+  return (
+    <>
+      <ReadersNav />
+      <Recommendation />
+    </>
+  );
 }
 
 export default Post;

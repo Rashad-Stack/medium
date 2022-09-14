@@ -5,6 +5,7 @@ import { BsPencilSquare } from "react-icons/bs";
 import { FiBell } from "react-icons/fi";
 import { HiOutlineHome } from "react-icons/hi";
 import { RiArticleLine } from "react-icons/ri";
+import ProfileIMage from "../static/rashad.jpg";
 import SmallLogo from "../static/smallLogo.png";
 function ReadersNav() {
   return (
@@ -21,10 +22,11 @@ function ReadersNav() {
         <FiBell />
         <BiBookBookmark />
         <RiArticleLine />
+        <span className="border-b" />
         <BsPencilSquare />
       </div>
-      <div className="">
-        <Image className="" />
+      <div className="w-10 h-10 rounded-full overflow-hidden place-items-center">
+        <Image src={ProfileIMage} className="object-cover" />
       </div>
     </div>
   );
