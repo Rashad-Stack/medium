@@ -1,9 +1,9 @@
-import { ReadersNav, Recommendation } from "../../components";
+import { ArticleMain, ReadersNav, Recommendation } from "../../components";
 function Post() {
   return (
     <div className="flex">
       <ReadersNav />
-      <div>Article Will go Here</div>
+      <ArticleMain />
       <Recommendation />
     </div>
   );

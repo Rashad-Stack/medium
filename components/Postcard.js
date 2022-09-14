@@ -28,7 +28,7 @@ function Postcard() {
             </p>
             <div className="flex items-center justify-between">
               <span className="my-2 text-sm flex items-center justify-between">
-                Jun 15 · 5 min read ·
+                Jun 15 • 5 min read •
                 <span className="bg-neutral-100 p-1 rounded-full">
                   productivity
                 </span>

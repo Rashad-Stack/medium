@@ -1,3 +1,4 @@
+export { default as ArticleMain } from "./ArticleMain";
 export { default as Banner } from "./Banner";
 export { default as BlogPost } from "./BlogPost";
 export { default as Button } from "./Button";
