@@ -1,6 +1,9 @@
-function Button({ children }) {
+function Button({ children, className, ...rest }) {
   return (
-    <button className="bg-black text-white py-2 px-4 rounded-full highlight-none">
+    <button
+      className={`flex items-center justify-center text-sm bg-black text-white py-2 px-4 rounded-full highlight-none ${className}`}
+      {...rest}
+    >
       {children}
     </button>
   );

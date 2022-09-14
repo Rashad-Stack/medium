@@ -9,7 +9,7 @@ import ProfileIMage from "../static/rashad.jpg";
 import SmallLogo from "../static/smallLogo.png";
 function ReadersNav() {
   return (
-    <div className="w-20 h-screen flex flex-col justify-between items-center p-1">
+    <aside className="w-20 h-screen flex flex-col justify-between items-center p-1">
       <Link href="/">
         <a>
           <div>
@@ -28,7 +28,7 @@ function ReadersNav() {
       <div className="w-10 h-10 rounded-full overflow-hidden place-items-center">
         <Image src={ProfileIMage} className="object-cover" />
       </div>
-    </div>
+    </aside>
   );
 }
 

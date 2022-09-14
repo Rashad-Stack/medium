@@ -1,0 +1,11 @@
+export { default as Author } from "../static/author.jpg";
+export { default as Banner } from "../static/banner.png";
+export { default as CPLogo } from "../static/cp.png";
+export { default as HeaderIMage } from "../static/header.png";
+export { default as JSLogo } from "../static/jsLogo.png";
+export { default as Logo } from "../static/logo.png";
+export { default as ProfileIMage } from "../static/rashad.jpg";
+export { default as ReplitLogo } from "../static/replit.png";
+export { default as SmallLogo } from "../static/smallLogo.png";
+export { default as Thumbnail } from "../static/thumbnail.webp";
+export { default as TutorialImg } from "../static/tutorial.jpg";
