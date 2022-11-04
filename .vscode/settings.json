@@ -1,3 +1,9 @@
 {
-  "cSpell.words": ["Rashad"]
+  "cSpell.words": ["Rashad"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.organizeImports": true
+  }
 }

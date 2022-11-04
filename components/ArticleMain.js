@@ -4,9 +4,12 @@ import { BiBookBookmark } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { HiOutlineLink } from "react-icons/hi";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5";
-import { Banner, ProfileIMage } from "../static";
+import { Banner } from "../static";
+import ProfileIMage from "../static/rashad.jpg";
 
-function ArticleMain() {
+function ArticleMain({ post, author }) {
+  console.log(post, author, "😆 😄");
+
   return (
     <div className="flex items-center justify-center flex-[3] border-l border-r">
       <div className="h-screen w-full p-8">
@@ -21,10 +24,16 @@ function ArticleMain() {
               />
             </div>
             <div className="flex-1 flex flex-col justify-center">
-              <p className="font-semibold">Rashad Stack</p>
+              <p className="font-semibold">{author?.data?.name}</p>
 
               <div className=" flex gap-1 text-gray-500 text-sm font-medium">
-                <span>June • 15 • 7 min read</span>{" "}
+                <span>
+                  {new Date(post.data?.postedOn).toLocaleString("en-US", {
+                    day: "numeric",
+                    month: "short",
+                  })}{" "}
+                  • {post.data?.postLength} min read
+                </span>{" "}
                 <span className=" flex items-center gap-1 text-green-700">
                   <AiFillPayCircle /> Listen
                 </span>
@@ -50,26 +59,20 @@ function ArticleMain() {
               height={100}
             />
           </div>
-          <h1 className="font-bold text-3xl">
-            Apple's Next Big Thing: A Business Model Change
-          </h1>
+          <h1 className="font-bold text-3xl">{post?.data?.title}</h1>
           <h4 className="font-medium font-mediumSerifItalic text-xl text-gray-500">
-            <span className="block">Rashad Stack, June 15, 2022</span>
             <span className="block">
-              Apple's Next Big Thing: A Business Model Change
+              {author?.data?.name},{" "}
+              {new Date(post.data?.postedOn).toLocaleString("en-US", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })}
             </span>
+            <span className="block">{post?.data?.brief}</span>
           </h4>
           <p className="font-medium font-mediumSerif text-xl text-gray-500">
-            The past three Monday Notes (here, here and here) looked at possible
-            candidates for Apple's NBT (Next Big Thing), a product category that
-            could launch an iPhone-like growth wave now that the smartphone
-            market approaches saturation. For perspective, 2021 iPhone revenue
-            was $192B, more than half of Apple's total revenue of $366B, this
-            from almost nothing ($123M) in 2007. And this doesn't count App
-            Store revenue, mostly for iPhone apps. The numbers aren't directly
-            disclosed but reliable sources estimate tens of billions of dollars
-            in net revenue, the riches Apple gets to keep after paying
-            developers.
+            {post?.data?.body}
           </p>
         </div>
       </div>
