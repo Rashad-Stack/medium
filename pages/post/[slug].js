@@ -4,7 +4,8 @@ import { ArticleMain, ReadersNav, Recommendation } from "../../components";
 import { MediumContext } from "../../context/MediumContext";
 
 function Post() {
-  const { posts, users } = useContext(MediumContext);
+  const { posts, users, currentUser, handleUserAuth } =
+    useContext(MediumContext);
   const router = useRouter();
   const [post, setPost] = useState([]);
   const [author, setAuthor] = useState([]);
@@ -22,9 +23,9 @@ function Post() {
 
   return (
     <div className="flex">
-      <ReadersNav />
+      <ReadersNav currentUser={currentUser} handleUserAuth={handleUserAuth} />
       <ArticleMain post={post} author={author} />
-      <Recommendation />
+      <Recommendation post={post} />
     </div>
   );
 }

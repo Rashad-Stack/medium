@@ -10,7 +10,7 @@ import {
 } from "../static";
 import Button from "./Button";
 
-function Recommendation() {
+function Recommendation({ post }) {
   return (
     <aside className="h-screen min-w-[10rem] max-w-[30rem] flex-[1.2] p-8">
       <Button className="w-full">Get Unlimited access</Button>
@@ -27,9 +27,13 @@ function Recommendation() {
       </form>
       <div className="flex flex-col mt-10">
         <div className="h-20 w-20 rounded-full overflow-hidden">
-          <Image src={ProfileIMage} width={100} height={100} />
+          <Image
+            src={`https://res.cloudinary.com/demo/image/fetch/${post.data?.authorImage}`}
+            width={100}
+            height={100}
+          />
         </div>
-        <p className="font-semibold mb-1 mt-4">Rashad Stack</p>
+        <p className="font-semibold mb-1 mt-4">{post?.data?.author}</p>
         <p className="text-gray-500">1M Followers</p>
         <div className="flex gap-2 my-4">
           <button className="bg-green-700 text-white rounded-full px-2 py-1 text-sm highlight-none">

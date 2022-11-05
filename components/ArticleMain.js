@@ -6,8 +6,6 @@ import { HiOutlineLink } from "react-icons/hi";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5";
 
 function ArticleMain({ post, author }) {
-  console.log(post, author, "😆 😄");
-
   return (
     <div className="flex items-center justify-center flex-[3] border-l border-r">
       <div className="h-screen w-full p-8">

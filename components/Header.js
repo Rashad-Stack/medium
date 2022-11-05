@@ -46,7 +46,7 @@ function Header() {
               <a>Membership</a>
             </Link>
 
-            <Link href={"/?addNew=1"}>
+            <Link href={"/?create=1"}>
               <a className="flex items-center justify-center text-sm bg-black text-white py-2 px-4 rounded-full">
                 Write
               </a>
@@ -79,8 +79,8 @@ function Header() {
       </div>
       <Modal
         style={customStyles}
-        isOpen={Boolean(router.query.addNew)}
-        onRequestClose={() => router.push("/")}
+        isOpen={Boolean(router.query.create)}
+        onRequestClose={() => router.push(router.pathname)}
       >
         <PostModal />
       </Modal>
