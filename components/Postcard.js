@@ -4,14 +4,13 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FiBookmark } from "react-icons/fi";
 import { fireStore } from "../firebase";
-import Logo from "../static/logo.png";
 function Postcard({ post }) {
   const [authorData, setAuthorData] = useState(null);
 
   useEffect(() => {
     const getAuthorData = async () => {
       setAuthorData(
-        (await getDoc(doc(fireStore, "users", post.data.author))).data()
+        (await getDoc(doc(fireStore, "users", post.data?.author))).data()
       );
     };
     getAuthorData();
@@ -25,7 +24,7 @@ function Postcard({ post }) {
             <div className="flex gap-4">
               <div className="grid place-items-center rounded-full overflow-hidden h-6 w-6">
                 <Image
-                  src={Logo}
+                  src={`https://res.cloudinary.com/demo/image/fetch/${authorData?.imageUrl}`}
                   width={40}
                   height={40}
                   className="object-contain"
@@ -33,17 +32,17 @@ function Postcard({ post }) {
               </div>
               <p className="font-semibold">{authorData?.name}</p>
             </div>
-            <h1 className="font-bold text-2xl">{post.data.title}</h1>
-            <p className="text-gray-500">{post.data.brief}</p>
+            <h1 className="font-bold text-2xl">{post.data?.title}</h1>
+            <p className="text-gray-500">{post.data?.brief}</p>
             <div className="flex items-center justify-between">
               <span className="my-2 text-sm flex items-center justify-between">
-                {new Date(post.data.postedOn).toLocaleString("en-US", {
+                {new Date(post.data?.postedOn).toLocaleString("en-US", {
                   day: "numeric",
                   month: "short",
                 })}{" "}
-                • {post.data.postLength} min read •
+                • {post.data?.postLength} min read •
                 <span className="bg-neutral-100 p-1 rounded-full">
-                  {post.data.category}
+                  {post.data?.category}
                 </span>
               </span>
               <button className="cursor-pointer highlight-none">
@@ -55,7 +54,7 @@ function Postcard({ post }) {
             <Image
               height={100}
               width={100}
-              src={`https://res.cloudinary.com/demo/image/fetch/${post.data.bannerImage}`}
+              src={`https://res.cloudinary.com/demo/image/fetch/${post.data?.bannerImage}`}
             />
           </div>
         </div>

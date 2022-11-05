@@ -4,8 +4,6 @@ import { BiBookBookmark } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { HiOutlineLink } from "react-icons/hi";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5";
-import { Banner } from "../static";
-import ProfileIMage from "../static/rashad.jpg";
 
 function ArticleMain({ post, author }) {
   console.log(post, author, "😆 😄");
@@ -18,13 +16,13 @@ function ArticleMain({ post, author }) {
             <div className="h-12 w-12 grid rounded-full overflow-hidden">
               <Image
                 className="object-cover"
-                src={ProfileIMage}
+                src={`https://res.cloudinary.com/demo/image/fetch/${post.data?.authorImage}`}
                 width={100}
                 height={100}
               />
             </div>
             <div className="flex-1 flex flex-col justify-center">
-              <p className="font-semibold">{author?.data?.name}</p>
+              <p className="font-semibold">{post?.data?.author}</p>
 
               <div className=" flex gap-1 text-gray-500 text-sm font-medium">
                 <span>
@@ -54,7 +52,7 @@ function ArticleMain({ post, author }) {
           <div className="h-72 w-full grid overflow-hidden mb-8">
             <Image
               className="object-cover"
-              src={Banner}
+              src={`https://res.cloudinary.com/demo/image/fetch/${post.data?.bannerImage}`}
               width={100}
               height={100}
             />
@@ -62,7 +60,7 @@ function ArticleMain({ post, author }) {
           <h1 className="font-bold text-3xl">{post?.data?.title}</h1>
           <h4 className="font-medium font-mediumSerifItalic text-xl text-gray-500">
             <span className="block">
-              {author?.data?.name},{" "}
+              {post?.data?.author},{" "}
               {new Date(post.data?.postedOn).toLocaleString("en-US", {
                 day: "numeric",
                 month: "short",

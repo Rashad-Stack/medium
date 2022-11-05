@@ -35,6 +35,7 @@ const MediumContextProvider = ({ children }) => {
             id: doc?.id,
             data: {
               author: doc.data().author,
+              authorImage: doc.data().authorImage,
               bannerImage: doc.data().bannerImage,
               body: doc.data().body,
               brief: doc.data().brief,
@@ -51,7 +52,6 @@ const MediumContextProvider = ({ children }) => {
   }, []);
 
   const addUserToFirebase = async (user) => {
-    console.log(user, "👡");
     await setDoc(doc(fireStore, "users", user.email), {
       email: user.email,
       name: user.displayName,

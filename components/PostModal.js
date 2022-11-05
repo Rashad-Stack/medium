@@ -14,8 +14,7 @@ const PostModal = () => {
 
   const { currentUser } = useContext(MediumContext);
   const router = useRouter();
-  console.log(currentUser.email, "🥪 ");
-
+  console.log(currentUser.displayName, "🧮 ");
   const addPostToFirebase = async (event) => {
     event.preventDefault();
     try {
@@ -29,8 +28,10 @@ const PostModal = () => {
         brief: brief,
         title: title,
         postedOn: new Date(),
-        author: currentUser?.email,
+        author: currentUser?.displayName,
+        authorImage: currentUser?.photoURL,
       });
+      console.log(data, "🧑 👎");
     } catch (err) {
       console.error(err);
     }
