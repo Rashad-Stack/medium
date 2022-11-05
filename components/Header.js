@@ -30,6 +30,12 @@ const customStyles = {
 function Header() {
   const { handleUserAuth, currentUser } = useContext(MediumContext);
   const router = useRouter();
+  console.log(router, "🎨 ");
+
+  const routerHandler = () => {
+    router.push(router.asPath);
+    router.back();
+  };
 
   return (
     <header className="flex justify-center items-center gap-10 p-5 bg-yellow-500">
@@ -80,7 +86,7 @@ function Header() {
       <Modal
         style={customStyles}
         isOpen={Boolean(router.query.create)}
-        onRequestClose={() => router.push(router.pathname)}
+        onRequestClose={routerHandler}
       >
         <PostModal />
       </Modal>

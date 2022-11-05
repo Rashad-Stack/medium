@@ -14,7 +14,6 @@ const PostModal = () => {
 
   const { currentUser } = useContext(MediumContext);
   const router = useRouter();
-  console.log(currentUser.displayName, "🧮 ");
   const addPostToFirebase = async (event) => {
     event.preventDefault();
     try {
