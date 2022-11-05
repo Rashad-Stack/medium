@@ -40,7 +40,7 @@ const MediumContextProvider = ({ children }) => {
               brief: doc.data().brief,
               category: doc.data().category,
               postLength: doc.data().postLength,
-              postedOn: doc.data().postedOn.toDate(),
+              postedOn: doc.data().postedOn?.toDate(),
               title: doc.data().title,
             },
           };
@@ -51,6 +51,7 @@ const MediumContextProvider = ({ children }) => {
   }, []);
 
   const addUserToFirebase = async (user) => {
+    console.log(user, "👡");
     await setDoc(doc(fireStore, "users", user.email), {
       email: user.email,
       name: user.displayName,
@@ -64,7 +65,6 @@ const MediumContextProvider = ({ children }) => {
     const user = userData.user;
     setCurrentUser(user);
     addUserToFirebase(user);
-    console.log(user, "🍌 👍");
   };
 
   return (
