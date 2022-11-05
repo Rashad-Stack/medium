@@ -11,7 +11,6 @@ import Button from "./Button";
 
 function ReadersNav({ currentUser, handleUserAuth }) {
   const router = useRouter();
-  console.log(router, "🧮");
 
   return (
     <aside className="w-20 h-screen flex flex-col justify-between items-center p-1">
@@ -38,7 +37,7 @@ function ReadersNav({ currentUser, handleUserAuth }) {
         <span className="border-b" />
         <button
           onClick={() =>
-            router.push(`/?create=1`, `${router.query.slug}/?create=1`, {
+            router.push(router.query.slug, `${router.query.slug}/?create=1`, {
               shallow: true,
             })
           }

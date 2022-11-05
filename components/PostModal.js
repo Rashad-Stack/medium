@@ -35,7 +35,7 @@ const PostModal = () => {
       console.error(err);
     }
 
-    router.push("/");
+    router.push(router.asPath);
   };
 
   return (
