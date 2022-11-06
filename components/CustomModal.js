@@ -22,6 +22,7 @@ const customStyles = {
 };
 const CustomModal = ({ post }) => {
   const router = useRouter();
+
   const routerHandler = () => {
     router.push(router.asPath);
     router.back();
@@ -30,11 +31,12 @@ const CustomModal = ({ post }) => {
     <Modal
       style={customStyles}
       isOpen={
-        router.asPath === `/post/${post?.id}?create=1` || router.query.create
+        router.asPath === "/post/new-story" ||
+        router.asPath === "/?post/new-story"
       }
       onRequestClose={routerHandler}
     >
-      <PostModal />
+      <PostModal routerHandler={routerHandler} />
     </Modal>
   );
 };

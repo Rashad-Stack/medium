@@ -24,7 +24,7 @@ function Header() {
               <a>Membership</a>
             </Link>
 
-            <Link href={"/?create=1"}>
+            <Link href="?post/new-story">
               <a className="flex items-center justify-center text-sm bg-black text-white py-2 px-4 rounded-full">
                 Write
               </a>

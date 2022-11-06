@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { MediumContext } from "../context/MediumContext";
 import { fireStore } from "../firebase";
 import Button from "./Button";
-const PostModal = () => {
+const PostModal = ({ routerHandler }) => {
   const [title, setTitle] = useState("");
   const [brief, setBrief] = useState("");
   const [category, setCategory] = useState("");
@@ -35,7 +35,7 @@ const PostModal = () => {
       console.error(err);
     }
 
-    router.push(router.asPath);
+    routerHandler();
   };
 
   return (

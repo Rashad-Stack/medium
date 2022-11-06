@@ -1,21 +1,7 @@
-import { doc, getDoc } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { FiBookmark } from "react-icons/fi";
-import { fireStore } from "../firebase";
 function Postcard({ post }) {
-  const [authorData, setAuthorData] = useState(null);
-
-  useEffect(() => {
-    const getAuthorData = async () => {
-      setAuthorData(
-        (await getDoc(doc(fireStore, "users", post.data?.author))).data()
-      );
-    };
-    getAuthorData();
-  }, []);
-
   return (
     <Link href={`post/${post?.id}`}>
       <a>
@@ -24,13 +10,13 @@ function Postcard({ post }) {
             <div className="flex gap-4">
               <div className="grid place-items-center rounded-full overflow-hidden h-6 w-6">
                 <Image
-                  src={`https://res.cloudinary.com/demo/image/fetch/${authorData?.imageUrl}`}
+                  src={`https://res.cloudinary.com/demo/image/fetch/${post.data?.authorImage}`}
                   width={40}
                   height={40}
                   className="object-contain"
                 />
               </div>
-              <p className="font-semibold">{authorData?.name}</p>
+              <p className="font-semibold">{post.data?.author}</p>
             </div>
             <h1 className="font-bold text-2xl">{post.data?.title}</h1>
             <p className="text-gray-500">{post.data?.brief}</p>

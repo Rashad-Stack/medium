@@ -27,25 +27,25 @@ function ReadersNav({ currentUser, handleUserAuth }) {
             <HiOutlineHome />
           </a>
         </Link>
-        <FiBell />
-        <Link href="/bookmark">
+        <Link href="/me/notification">
+          <a>
+            <FiBell />
+          </a>
+        </Link>
+
+        <Link href="/me/bookmark">
           <a>
             <BiBookBookmark />
           </a>
         </Link>
         <RiArticleLine />
         <span className="border-b" />
-        <button
-          onClick={() =>
-            router.push(router.query.slug, `${router.query.slug}/?create=1`, {
-              shallow: true,
-            })
-          }
-        >
+
+        <Link href={"new-story"}>
           <a>
             <BsPencilSquare />
           </a>
-        </button>
+        </Link>
       </div>
 
       {currentUser.length !== 0 ? (
