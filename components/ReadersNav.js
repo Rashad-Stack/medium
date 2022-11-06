@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { BiBookBookmark } from "react-icons/bi";
 import { BsPencilSquare } from "react-icons/bs";
 import { FiBell } from "react-icons/fi";
@@ -10,8 +9,6 @@ import SmallLogo from "../static/smallLogo.png";
 import Button from "./Button";
 
 function ReadersNav({ currentUser, handleUserAuth }) {
-  const router = useRouter();
-
   return (
     <aside className="w-20 h-screen flex flex-col justify-between items-center p-1">
       <Link href="/">

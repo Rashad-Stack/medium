@@ -12,7 +12,7 @@ const PostModal = ({ routerHandler }) => {
   const [bannerImage, setBannerImage] = useState("");
   const [body, setBody] = useState("");
 
-  const { currentUser } = useContext(MediumContext);
+  const { currentUser, getPOsts } = useContext(MediumContext);
   const router = useRouter();
   const addPostToFirebase = async (event) => {
     event.preventDefault();
@@ -30,7 +30,7 @@ const PostModal = ({ routerHandler }) => {
         author: currentUser?.displayName,
         authorImage: currentUser?.photoURL,
       });
-      console.log(data, "🧑 👎");
+      getPOsts();
     } catch (err) {
       console.error(err);
     }

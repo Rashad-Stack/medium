@@ -10,8 +10,8 @@ const Navigation = () => {
   return (
     <div className="flex">
       <ReadersNav currentUser={currentUser} handleUserAuth={handleUserAuth} />
-      <Notification />
-      <Bookmarks />
+      {router.asPath === "/me/notification" && <Notification />}
+      {router.asPath === "/me/bookmark" && <Bookmarks />}
     </div>
   );
 };

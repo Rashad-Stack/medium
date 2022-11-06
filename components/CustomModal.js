@@ -20,13 +20,9 @@ const customStyles = {
     backgroundColor: "rgba(10,11,13,0.75)",
   },
 };
-const CustomModal = ({ post }) => {
+const CustomModal = () => {
   const router = useRouter();
 
-  const routerHandler = () => {
-    router.push(router.asPath);
-    router.back();
-  };
   return (
     <Modal
       style={customStyles}
@@ -34,9 +30,9 @@ const CustomModal = ({ post }) => {
         router.asPath === "/post/new-story" ||
         router.asPath === "/?post/new-story"
       }
-      onRequestClose={routerHandler}
+      onRequestClose={() => router.back()}
     >
-      <PostModal routerHandler={routerHandler} />
+      <PostModal routerHandler={() => router.back()} />
     </Modal>
   );
 };
