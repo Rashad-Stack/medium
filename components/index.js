@@ -5,6 +5,7 @@ export { default as Bookmarks } from "./Bookmarks";
 export { default as Button } from "./Button";
 export { default as CustomModal } from "./CustomModal";
 export { default as Header } from "./Header";
+export { default as Loader } from "./Loader";
 export { default as Notification } from "./Notification";
 export { default as Postcard } from "./Postcard";
 export { default as ReadersNav } from "./ReadersNav";

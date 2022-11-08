@@ -1,5 +1,4 @@
 import { addDoc, collection } from "firebase/firestore";
-import { useRouter } from "next/router";
 import { useContext, useState } from "react";
 import { MediumContext } from "../context/MediumContext";
 import { fireStore } from "../firebase";
@@ -12,8 +11,8 @@ const PostModal = ({ routerHandler }) => {
   const [bannerImage, setBannerImage] = useState("");
   const [body, setBody] = useState("");
 
-  const { currentUser, getPOsts } = useContext(MediumContext);
-  const router = useRouter();
+  const { currentUser, getPosts } = useContext(MediumContext);
+
   const addPostToFirebase = async (event) => {
     event.preventDefault();
     try {
@@ -30,7 +29,7 @@ const PostModal = ({ routerHandler }) => {
         author: currentUser?.displayName,
         authorImage: currentUser?.photoURL,
       });
-      getPOsts();
+      getPosts();
     } catch (err) {
       console.error(err);
     }

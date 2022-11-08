@@ -9,18 +9,15 @@ import {
 import { MediumContext } from "../../context/MediumContext";
 
 function Post() {
-  const { posts, users, currentUser, handleUserAuth } =
-    useContext(MediumContext);
+  const { posts, currentUser, handleUserAuth } = useContext(MediumContext);
   const router = useRouter();
   const [post, setPost] = useState([]);
 
   useEffect(() => {
     // Guard clause
-    if (posts.length === 0 || users.length === 0) {
-      return;
-    }
+    if (posts.length === 0) return;
     setPost(posts.find((post) => post.id === router.query?.slug));
-  }, [post]);
+  }, [posts]);
 
   return (
     <div className="flex">

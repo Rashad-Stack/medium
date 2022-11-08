@@ -26,7 +26,7 @@ const MediumContextProvider = ({ children }) => {
     getUsers();
   }, []);
 
-  const getPOsts = async () => {
+  const getPosts = async () => {
     const querySnapshot = await getDocs(collection(fireStore, "articles"));
     setPosts(
       querySnapshot.docs.map((doc) => {
@@ -49,7 +49,7 @@ const MediumContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getPOsts();
+    getPosts();
   }, []);
 
   const addUserToFirebase = async (user) => {
@@ -70,7 +70,7 @@ const MediumContextProvider = ({ children }) => {
 
   return (
     <MediumContext.Provider
-      value={{ posts, users, handleUserAuth, currentUser, getPOsts }}
+      value={{ posts, users, handleUserAuth, currentUser, getPosts }}
     >
       {children}
     </MediumContext.Provider>

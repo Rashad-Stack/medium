@@ -38,11 +38,13 @@ function ReadersNav({ currentUser, handleUserAuth }) {
         <RiArticleLine />
         <span className="border-b" />
 
-        <Link href={"new-story"}>
-          <a>
-            <BsPencilSquare />
-          </a>
-        </Link>
+        {currentUser.length !== 0 && (
+          <Link href={"new-story"}>
+            <a>
+              <BsPencilSquare />
+            </a>
+          </Link>
+        )}
       </div>
 
       {currentUser.length !== 0 ? (
