@@ -1,15 +1,15 @@
 import { useContext } from "react";
-import { Banner, BlogPost, Header } from "../components";
+import { Banner, Header, HomeStory } from "../components";
 import { MediumContext } from "../context/MediumContext";
 export default function Home() {
-  const { posts } = useContext(MediumContext);
+  const { currentUser } = useContext(MediumContext);
 
   return (
     <div className="mx-auto">
       <Header />
       <main>
         <Banner />
-        <BlogPost />
+        <HomeStory />
       </main>
     </div>
   );

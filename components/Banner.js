@@ -1,10 +1,14 @@
 import Image from "next/image";
+import { useContext } from "react";
+import { MediumContext } from "../context/MediumContext";
 import banner from "../static/banner.png";
 import Button from "./Button";
-
 function Banner() {
+  const { ref, inView, entry } = useContext(MediumContext);
+
   return (
     <section
+      ref={ref}
       id="banner"
       className="h-max-[10rem] flex items-center justify-center bg-yellow-500 border-y border-black"
     >

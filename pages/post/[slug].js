@@ -20,11 +20,15 @@ function Post() {
   }, [posts]);
 
   return (
-    <div className="flex">
-      <ReadersNav currentUser={currentUser} handleUserAuth={handleUserAuth} />
+    <div className="container max-w-screen-xl mx-auto flex justify-between">
+      <div className="w-20">
+        <ReadersNav />
+      </div>
       <ArticleMain post={post} />
-      <Recommendation post={post} />
-      <CustomModal post={post} />
+      <div className="w-80 lg:w-96">
+        <Recommendation post={post} />
+      </div>
+      <CustomModal />
     </div>
   );
 }

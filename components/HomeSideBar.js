@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { MdMarkEmailUnread } from "react-icons/md";
 import {
   CPLogo,
   JSLogo,
@@ -8,30 +7,11 @@ import {
   TutorialImg,
 } from "../static";
 import SidebarSearchForm from "./SidebarSearchForm";
-
-function Recommendation({ post }) {
+const HomeSideBar = () => {
   return (
-    <aside className="w-80 h-screen p-8 fixed border-l">
+    <aside className="md:w-72 lg:w-80 h-screen p-8 border-l sticky top-0">
       <SidebarSearchForm />
-      <div className="flex flex-col mt-10">
-        <div className="h-20 w-20 rounded-full overflow-hidden">
-          <Image
-            src={`https://res.cloudinary.com/demo/image/fetch/${post.data?.authorImage}`}
-            width={100}
-            height={100}
-          />
-        </div>
-        <p className="font-semibold mb-1 mt-4">{post?.data?.author}</p>
-        <p className="text-gray-500">1M Followers</p>
-        <div className="flex gap-2 my-4">
-          <button className="bg-green-700 text-white rounded-full px-2 py-1 text-sm highlight-none">
-            Follow
-          </button>
-          <button className="bg-green-700 text-white rounded-full px-2 py-1 text-sm highlight-none">
-            <MdMarkEmailUnread />
-          </button>
-        </div>
-      </div>
+
       <div className="flex flex-col">
         <p className="">More from medium</p>
         {recommendedPosts.map((recommendedPost, index) => (
@@ -54,7 +34,7 @@ function Recommendation({ post }) {
             </div>
             <div
               className="flex flex-1 items-end justify-center
-          h-16 w-16"
+              h-16 w-16"
             >
               <Image
                 src={recommendedPost.image}
@@ -68,9 +48,8 @@ function Recommendation({ post }) {
       </div>
     </aside>
   );
-}
-
-export default Recommendation;
+};
+export default HomeSideBar;
 const recommendedPosts = [
   {
     title: "What can you do with Replit?",

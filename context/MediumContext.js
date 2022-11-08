@@ -1,13 +1,18 @@
 import { signInWithPopup } from "firebase/auth";
 import { collection, doc, getDocs, setDoc } from "firebase/firestore";
 import { createContext, useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import { auth, fireStore, provider } from "../firebase";
-
 const MediumContext = createContext();
 const MediumContextProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
+
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
 
   useEffect(() => {
     const getUsers = async () => {
@@ -70,7 +75,16 @@ const MediumContextProvider = ({ children }) => {
 
   return (
     <MediumContext.Provider
-      value={{ posts, users, handleUserAuth, currentUser, getPosts }}
+      value={{
+        posts,
+        users,
+        handleUserAuth,
+        currentUser,
+        getPosts,
+        ref,
+        inView,
+        entry,
+      }}
     >
       {children}
     </MediumContext.Provider>

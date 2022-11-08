@@ -5,8 +5,8 @@ function Postcard({ post }) {
   return (
     <Link href={`post/${post?.id}`}>
       <a>
-        <div className="flex max-w-3xl h-40 items-center cursor-pointer">
-          <div className="w-96 flex flex-col mr-5">
+        <div className="w-full flex h-40 items-center justify-center">
+          <div className="w-3/5 flex flex-col mr-5">
             <div className="flex gap-4">
               <div className="grid place-items-center rounded-full overflow-hidden h-6 w-6">
                 <Image
@@ -36,7 +36,7 @@ function Postcard({ post }) {
               </button>
             </div>
           </div>
-          <div className="flex-1">
+          <div>
             <Image
               height={100}
               width={100}
