@@ -10,7 +10,7 @@ function ArticleMain({ post }) {
   console.log(post.length !== 0, "⏰ ⚗ ");
   return (
     <div className="flex items-center justify-center flex-[3] border-l border-r">
-      {!!post.length ? (
+      {post.length !== 0 ? (
         <div key={post.id} className="h-screen w-full p-8">
           <div className="flex justify-between items-center mt-9 mb-5">
             <div className="flex gap-4">
