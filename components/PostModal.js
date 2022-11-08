@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { MediumContext } from "../context/MediumContext";
 import { fireStore } from "../firebase";
 import Button from "./Button";
+import Loader from "./Loader";
 const PostModal = ({ routerHandler }) => {
   const [title, setTitle] = useState("");
   const [brief, setBrief] = useState("");
@@ -10,6 +11,7 @@ const PostModal = ({ routerHandler }) => {
   const [postLength, setPostLength] = useState("");
   const [bannerImage, setBannerImage] = useState("");
   const [body, setBody] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const { currentUser, getPosts } = useContext(MediumContext);
 
@@ -18,7 +20,9 @@ const PostModal = ({ routerHandler }) => {
     try {
       if (!title || !brief || !category || !postLength || !bannerImage || !body)
         return;
-      const data = await addDoc(collection(fireStore, "articles"), {
+
+      setLoading(true);
+      await addDoc(collection(fireStore, "articles"), {
         bannerImage: bannerImage,
         body: body,
         category: category,
@@ -29,6 +33,7 @@ const PostModal = ({ routerHandler }) => {
         author: currentUser?.displayName,
         authorImage: currentUser?.photoURL,
       });
+      setLoading(false);
       getPosts();
     } catch (err) {
       console.error(err);
@@ -113,7 +118,8 @@ const PostModal = ({ routerHandler }) => {
           />
         </span>
       </div>
-      <Button>Submit</Button>
+
+      <Button>{loading ? <Loader /> : "Submit"}</Button>
     </form>
   );
 };

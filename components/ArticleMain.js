@@ -7,7 +7,6 @@ import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5";
 import Loader from "./Loader";
 
 function ArticleMain({ post }) {
-  console.log(post.length !== 0, "⏰ ⚗ ");
   return (
     <div className="flex items-center justify-center flex-[3] border-l border-r">
       {post.length !== 0 ? (
