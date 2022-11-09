@@ -3,6 +3,7 @@ export { default as Banner } from "./Banner";
 export { default as BlogPost } from "./BlogPost";
 export { default as BlogPostNave } from "./BlogPostNave";
 export { default as Bookmarks } from "./Bookmarks";
+export { default as BottomTab } from "./BottomTab";
 export { default as Button } from "./Button";
 export { default as CustomModal } from "./CustomModal";
 export { default as Header } from "./Header";

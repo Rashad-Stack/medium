@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <>
-      <header className="hidden md:flex justify-center items-center gap-10 p-5 bg-yellow-500">
+      <header className="hidden md:flex justify-center items-center gap-10 p-5 bg-yellow-500 shadow-b">
         <div className="container max-w-7xl mx-auto flex justify-between items-center">
           <div className="w-40 h-10 flex items-center flex-start cursor-pointer">
             <Image alt="Logo" src={Logo} className="w-full object-contain" />

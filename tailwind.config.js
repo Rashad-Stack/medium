@@ -11,6 +11,10 @@ module.exports = {
         mediumSerifItalic: ["CharterItalic"],
         mediumSerif: ["Charter"],
       },
+      boxShadow: {
+        t: "0px 2px 10px rgb(0 0 0 / 15%)",
+        b: "0px -2px 10px rgb(0 0 0 / 15%);",
+      },
     },
   },
   plugins: [
@@ -26,3 +30,4 @@ module.exports = {
     }),
   ],
 };
+// 0px 2px 10px rgb(0 0 0 / 15%)
