@@ -1,12 +1,14 @@
 export { default as ArticleMain } from "./ArticleMain";
 export { default as Banner } from "./Banner";
 export { default as BlogPost } from "./BlogPost";
+export { default as BlogPostNave } from "./BlogPostNave";
 export { default as Bookmarks } from "./Bookmarks";
 export { default as Button } from "./Button";
 export { default as CustomModal } from "./CustomModal";
 export { default as Header } from "./Header";
 export { default as HomeStory } from "./HomeStory";
 export { default as Loader } from "./Loader";
+export { default as MobileHeader } from "./MobileHeader";
 export { default as Notification } from "./Notification";
 export { default as Postcard } from "./Postcard";
 export { default as ReadersNav } from "./ReadersNav";

@@ -9,7 +9,7 @@ import {
 import SidebarSearchForm from "./SidebarSearchForm";
 const HomeSideBar = () => {
   return (
-    <aside className="md:w-72 lg:w-80 h-screen p-8 border-l sticky top-0">
+    <aside className="md:w-72 lg:w-80 h-screen p-8 border-l">
       <SidebarSearchForm />
 
       <div className="flex flex-col">

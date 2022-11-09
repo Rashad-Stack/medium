@@ -15,7 +15,7 @@ function ReadersNav({ sticky }) {
   return (
     <aside
       className={`w-20 h-screen flex flex-col justify-between items-center bg-white p-1 ${
-        sticky ? "sticky top-0" : "fixed"
+        sticky ? "sticky top-0 pt-5" : "fixed"
       }  border-r`}
     >
       <Link href="/">

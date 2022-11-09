@@ -8,13 +8,15 @@ const HomeStory = () => {
   console.log(inView, "😻 🥪 ");
   return (
     <section className="home">
-      <div className="container max-w-screen-lg mx-auto flex">
-        <div className="flex ">
-          <div className="w-20 pt-5">{!inView && <ReadersNav sticky />}</div>
+      <div className="container max-w-screen-lg mx-auto ">
+        <div className="flex">
+          <div className="w-20 hidden md:grid">
+            {!inView && <ReadersNav sticky />}
+          </div>
 
           <BlogPost />
 
-          <div className="w-32 lg:w-96 pt-5 static">
+          <div className="hidden md:grid w-32 lg:w-96 static">
             <HomeSideBar />
           </div>
         </div>
