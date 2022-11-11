@@ -1,7 +1,7 @@
 function Button({ children, className, bgCol = "bg-black ", ...rest }) {
   return (
     <button
-      className={`flex items-center justify-center text-sm text-white py-2 px-4 rounded-full highlight-none font-soehne transition duration-700 ${className} ${bgCol}`}
+      className={`w-28 h-10 flex items-center justify-center text-sm text-white rounded-full highlight-none font-soehne transition duration-700 ${className} ${bgCol}`}
       {...rest}
     >
       {children}

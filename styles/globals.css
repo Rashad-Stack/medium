@@ -2,13 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "gt-super";
   src: url("/fonts/gt-super/GT-Super-Text-Book.woff2") format("woff2");
 }
 @font-face {
   font-family: "soehne";
-  src: url("/fonts/soehne/soehne-web-buch.woff2") format("woff2");
+  src: url("/fonts/soehne/soehne-normal.woff2") format("woff2");
 }
 @font-face {
   font-family: "soehne-bold";

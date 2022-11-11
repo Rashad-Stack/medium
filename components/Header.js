@@ -66,7 +66,7 @@ function Header({ bannerHeight }) {
               }
             >
               <Link href={"getStarted"}>
-                <a>Get Started</a>
+                <a>Get started</a>
               </Link>
             </Button>
           </div>

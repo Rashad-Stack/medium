@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import BannerAnimation from "./BannerAnimation";
-import Button from "./Button";
 function Banner({ setBannerHeight }) {
   const height = useRef(null);
 
@@ -20,7 +19,9 @@ function Banner({ setBannerHeight }) {
             Discover stories, thinking, and expertise
             <br /> from writers on any topic.
           </h3>
-          <Button className="w-48 py-5 text-xl">Start reading</Button>
+          <button className="w-52 h-10 flex items-center justify-center text-md tracking-wider bg-black text-white font-semibold rounded-full highlight-none font-soehne transition duration-700 ">
+            Start reading
+          </button>
         </div>
       </div>
       <div className="hidden md:flex">
