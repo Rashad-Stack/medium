@@ -1,40 +1,23 @@
-import Image from "next/image";
-import { useContext } from "react";
-import { MediumContext } from "../context/MediumContext";
-import banner from "../static/banner.png";
+import BannerAnimation from "./BannerAnimation";
 import Button from "./Button";
 function Banner() {
-  const { ref, entry } = useContext(MediumContext);
-
-  const scrollTop = () => {
-    window.scroll({
-      top: entry.boundingClientRect.height + 85,
-      behavior: "smooth",
-    });
-    console.log("banner line 10 🧮 🧮 ", entry.boundingClientRect.height);
-  };
-
   return (
     <section
-      ref={ref}
       id="banner"
-      className="h-max-[10rem] hidden md:flex items-center justify-center bg-yellow-500 border-y border-black"
+      className="flex items-center justify-between bg-medium border-b border-black"
     >
-      <div className="max-w-7xl flex flex-1 justify-between items-center">
-        <div className="space-y-5 px-10 flex-[3]">
-          <h1 className="max-w-xl text-8xl font-mediumSerif">Stay Curious</h1>
-          <h3 className="text-2xl">
-            Discover stories, thinking, and expertise from writers on any topic.
+      <div className="container max-w-4xl mx-auto flex justify-start px-10">
+        <div className="w-full space-y-10 py-8">
+          <h1 className="text-6xl md:text-8xl font-gt-super">Stay curious.</h1>
+          <h3 className="text-xl md:text-2xl font-soehne">
+            Discover stories, thinking, and expertise
+            <br /> from writers on any topic.
           </h3>
-          <Button onClick={scrollTop}>Start Reading</Button>
+          <Button className="w-48 py-5 text-xl">Start reading</Button>
         </div>
-
-        <Image
-          src={banner}
-          className="hidden h-32 md:inline-flex object-contain flex-1"
-          width={500}
-          height={400}
-        />
+      </div>
+      <div className="hidden md:flex">
+        <BannerAnimation />
       </div>
     </section>
   );

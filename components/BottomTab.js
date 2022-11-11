@@ -8,7 +8,7 @@ import Button from "./Button";
 const BottomTab = () => {
   const { currentUser, handleUserAuth } = useContext(MediumContext);
   return (
-    <nav className="w-full bg-white fixed bottom-0 shadow-t px-3">
+    <nav className="grid md:hidden w-full bg-white fixed bottom-0 shadow-t px-3">
       <div className="w-4/5 mx-auto flex justify-between items-center">
         <Link href={"/"}>
           <a className="font-bold block py-4 text-gray-400">

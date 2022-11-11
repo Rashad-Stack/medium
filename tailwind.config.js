@@ -8,12 +8,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mediumSerifItalic: ["CharterItalic"],
-        mediumSerif: ["Charter"],
+        "gt-super": ["gt-super"],
+        soehne: ["soehne"],
+        "soehne-bold": ["soehne-bold"],
       },
       boxShadow: {
         t: "0px 2px 10px rgb(0 0 0 / 15%)",
         b: "0px -2px 10px rgb(0 0 0 / 15%);",
+      },
+      colors: {
+        medium: "#FFC017",
       },
     },
   },

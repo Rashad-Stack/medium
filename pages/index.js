@@ -1,15 +1,9 @@
-import { useContext } from "react";
-import { Banner, HomeStory } from "../components";
-import { MediumContext } from "../context/MediumContext";
-export default function Home() {
-  const { currentUser } = useContext(MediumContext);
+import { TrendingStory } from "../components";
 
+export default function Home() {
   return (
-    <div className="mx-auto">
-      <main>
-        <Banner />
-        <HomeStory />
-      </main>
-    </div>
+    <>
+      <TrendingStory />
+    </>
   );
 }

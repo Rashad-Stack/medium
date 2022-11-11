@@ -9,3 +9,4 @@ export { default as ReplitLogo } from "../static/replit.png";
 export { default as SmallLogo } from "../static/smallLogo.png";
 export { default as Thumbnail } from "../static/thumbnail.webp";
 export { default as TutorialImg } from "../static/tutorial.jpg";
+export { default as banner } from "../static/vector5.svg";

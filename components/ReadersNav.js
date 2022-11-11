@@ -10,19 +10,13 @@ import { MediumContext } from "../context/MediumContext";
 import SmallLogo from "../static/smallLogo.png";
 import Button from "./Button";
 
-function ReadersNav({ sticky }) {
+function ReadersNav() {
   const { currentUser, handleUserAuth } = useContext(MediumContext);
   return (
-    <aside
-      className={`w-20 h-screen flex flex-col justify-between items-center bg-white p-1 ${
-        sticky ? "sticky top-0 pt-5" : "fixed"
-      }  border-r`}
-    >
+    <aside className="w-20 h-screen flex flex-col justify-between items-center bg-white sticky top-0 py-5 border-r">
       <Link href="/">
         <a>
-          <div>
-            <Image src={SmallLogo} />
-          </div>
+          <Image width={50} height={50} src={SmallLogo} />
         </a>
       </Link>
       <div className="flex flex-col justify-center gap-6 text-2xl text-neutral-500">
