@@ -55,7 +55,7 @@ const Data = [
     articleLength: 2,
   },
   {
-    id: 5,
+    id: 6,
     trendPosition: "06",
     profileImage: CPLogo,
     authorName: "Arthur Hayes",
@@ -78,10 +78,10 @@ const TrendingStory = () => {
         </h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-        {Data.map((article) => (
-          <Link href={`trending/${article.id}`}>
+        {Data.map((article, i) => (
+          <Link key={article.id} href={`trending/${article.id}`}>
             <a>
-              <div key={article.id} className="w-full flex gap-3 items-start">
+              <div className="w-full flex gap-3 items-start">
                 <span className="text-gray-200 text-3xl font-extrabold font-soehne-bold tracking-wider flex items-start">
                   {article?.trendPosition}
                 </span>

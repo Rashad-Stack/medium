@@ -1,18 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MediumContext } from "../context/MediumContext";
 import Logo from "../static/logo.png";
 import Button from "./Button";
 import CustomModal from "./CustomModal";
 
-function Header() {
+function Header({ bannerHeight }) {
   const { handleUserAuth, currentUser } = useContext(MediumContext);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
       {!!currentUser && (
-        <header className="bg-medium border-b border-black sticky top-0 z-10">
+        <header
+          className={`${
+            bannerHeight >= scrollPosition ? "bg-medium" : "bg-white"
+          }  border-b border-black sticky top-0 z-10 transition duration-700`}
+        >
           <div className="container max-w-screen-xl mx-auto flex justify-between items-center gap-3 md:gap-10 py-5 px-3 md:px-10 ">
             <Link href="/">
               <a className="w-32 sm:w-40 h-10 flex items-center flex-start cursor-pointer">
@@ -36,12 +53,18 @@ function Header() {
                 </Link>
               </nav>
               <nav className="hidden sm:flex items-center">
-                <Link href="/signin" onClick={handleUserAuth}>
-                  <a className="hidden sm:grid">Sign in</a>
+                <Link href="/signin">
+                  <a className="hidden sm:grid" onClick={handleUserAuth}>
+                    Sign in
+                  </a>
                 </Link>
               </nav>
             </div>
-            <Button>
+            <Button
+              bgCol={
+                bannerHeight >= scrollPosition ? "bg-black" : "bg-green-500"
+              }
+            >
               <Link href={"getStarted"}>
                 <a>Get Started</a>
               </Link>

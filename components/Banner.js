@@ -1,8 +1,15 @@
+import { useEffect, useRef } from "react";
 import BannerAnimation from "./BannerAnimation";
 import Button from "./Button";
-function Banner() {
+function Banner({ setBannerHeight }) {
+  const height = useRef(null);
+
+  useEffect(() => {
+    setBannerHeight(height.current.clientHeight);
+  }, []);
   return (
     <section
+      ref={height}
       id="banner"
       className="flex items-center justify-between bg-medium border-b border-black"
     >
