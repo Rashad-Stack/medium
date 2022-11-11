@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <Banner />
-      <main className="container max-w-screen-2xl mx-auto px-10">
+      <main className="container max-w-screen-xl mx-auto px-10">
         {children}
       </main>
     </>

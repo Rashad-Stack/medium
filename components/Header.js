@@ -13,7 +13,7 @@ function Header() {
     <>
       {!!currentUser && (
         <header className="bg-medium border-b border-black sticky top-0 z-10">
-          <div className="container max-w-screen-2xl mx-auto flex justify-between items-center gap-3 md:gap-10 py-5 px-3 md:px-10 ">
+          <div className="container max-w-screen-xl mx-auto flex justify-between items-center gap-3 md:gap-10 py-5 px-3 md:px-10 ">
             <Link href="/">
               <a className="w-32 sm:w-40 h-10 flex items-center flex-start cursor-pointer">
                 <Image

@@ -77,11 +77,11 @@ const TrendingStory = () => {
           Trending on medium
         </h1>
       </div>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         {Data.map((article) => (
           <Link href={`trending/${article.id}`}>
             <a>
-              <div key={article.id} className="flex gap-3 items-start">
+              <div key={article.id} className="w-full flex gap-3 items-start">
                 <span className="text-gray-200 text-3xl font-extrabold font-soehne-bold tracking-wider flex items-start">
                   {article?.trendPosition}
                 </span>
