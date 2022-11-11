@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiBookmark } from "react-icons/fi";
+import { MdOutlineBookmarkAdd } from "react-icons/md";
 function Postcard({ post }) {
   return (
     <Link href={`post/${post?.id}`}>
       <a>
-        <div className="w-full flex items-center justify-between border-b py-5">
-          <div className="w-9/12 flex flex-col mr-5">
+        <div className="w-full md:w-3/5 flex items-center justify-between gap-3">
+          <div className="w-3/5 flex flex-col">
             <div className="flex gap-4">
               <div className="grid place-items-center rounded-full overflow-hidden h-6 w-6">
                 <Image
@@ -18,8 +18,12 @@ function Postcard({ post }) {
               </div>
               <p className="font-semibold">{post.data?.author}</p>
             </div>
-            <h1 className="font-bold text-2xl">{post.data?.title}</h1>
-            <p className="text-gray-500">{post.data?.brief}</p>
+            <h1 className="font-bold text-md md:text-xl text-ellipsis	max-h-14 overflow-hidden">
+              {post.data?.title}
+            </h1>
+            <p className="text-sm text-gray-500 text-ellipsis max-h-10 overflow-hidden">
+              {post.data?.brief}
+            </p>
             <div className="flex items-center justify-between">
               <span className="my-2 text-sm flex items-center justify-between">
                 {new Date(post.data?.postedOn).toLocaleString("en-US", {
@@ -32,15 +36,16 @@ function Postcard({ post }) {
                 </span>
               </span>
               <button className="cursor-pointer highlight-none">
-                <FiBookmark className="h-5 w-5" />
+                <MdOutlineBookmarkAdd className="h-5 w-5" />
               </button>
             </div>
           </div>
 
           <Image
-            height={100}
-            width={100}
+            height={135}
+            width={200}
             src={`https://res.cloudinary.com/demo/image/fetch/${post.data?.bannerImage}`}
+            className="object-cover"
           />
         </div>
       </a>

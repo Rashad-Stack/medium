@@ -7,9 +7,7 @@ const Layout = ({ children }) => {
     <>
       <Header bannerHeight={bannerHeight} />
       <Banner setBannerHeight={setBannerHeight} />
-      <main className="container max-w-screen-xl mx-auto px-10">
-        {children}
-      </main>
+      <main>{children}</main>
     </>
   );
 };

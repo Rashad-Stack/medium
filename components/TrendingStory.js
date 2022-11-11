@@ -69,42 +69,48 @@ const Data = [
 const TrendingStory = () => {
   return (
     <section id="trending" className="py-16 border-b">
-      <div className="flex items-center gap-3 mb-5">
-        <span className="w-6 h-6 flex items-center justify-start border border-black rounded-full">
-          <IoIosTrendingUp size={18} />
-        </span>
-        <h1 className="text-sm font-semibold uppercase font-soehne tracking-wide">
-          Trending on medium
-        </h1>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-        {Data.map((article, i) => (
-          <Link key={article.id} href={`trending/${article.id}`}>
-            <a>
-              <div className="w-full flex gap-3 items-start">
-                <span className="text-gray-200 text-3xl font-extrabold font-soehne-bold tracking-wider flex items-start">
-                  {article?.trendPosition}
-                </span>
-                <div className="flex flex-col gap-3 py-3">
-                  <div className="flex items-center gap-3">
-                    <Image width={20} height={20} src={article?.profileImage} />
-                    <p className="text-sm font-soehne">
-                      {article?.authorName}{" "}
-                      <span className="text-gray-400">in</span>{" "}
-                      {article?.groupName}
-                    </p>
-                  </div>
-                  <h3 className="text-base font-soehne font-semibold tracking-wider">
-                    {article?.title}
-                  </h3>
-                  <span className="flex items-center text-sm text-gray-500">
-                    {article?.postedOn} · {article?.articleLength} min read
+      <div className="container max-w-screen-xl mx-auto px-10">
+        <div className="flex items-center gap-3 mb-5">
+          <span className="w-6 h-6 flex items-center justify-start border border-black rounded-full">
+            <IoIosTrendingUp size={18} />
+          </span>
+          <h1 className="text-sm font-semibold uppercase font-soehne tracking-wide">
+            Trending on medium
+          </h1>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+          {Data.map((article, i) => (
+            <Link key={article.id} href={`trending/${article.id}`}>
+              <a>
+                <div className="w-full flex gap-3 items-start">
+                  <span className="text-gray-200 text-3xl font-extrabold font-soehne-bold tracking-wider flex items-start">
+                    {article?.trendPosition}
                   </span>
+                  <div className="flex flex-col gap-3 py-3">
+                    <div className="flex items-center gap-3">
+                      <Image
+                        width={20}
+                        height={20}
+                        src={article?.profileImage}
+                      />
+                      <p className="text-sm font-soehne">
+                        {article?.authorName}{" "}
+                        <span className="text-gray-400">in</span>{" "}
+                        {article?.groupName}
+                      </p>
+                    </div>
+                    <h3 className="text-base font-soehne font-semibold tracking-wider">
+                      {article?.title}
+                    </h3>
+                    <span className="flex items-center text-sm text-gray-500">
+                      {article?.postedOn} · {article?.articleLength} min read
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </a>
-          </Link>
-        ))}
+              </a>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
