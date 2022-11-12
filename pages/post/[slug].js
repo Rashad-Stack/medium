@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
-import { ArticleMain, CustomModal, Recommendation } from "../../components";
 import { MediumContext } from "../../context/MediumContext";
 
 function Post() {
@@ -14,17 +13,7 @@ function Post() {
     setPost(posts.find((post) => post.id === router.query?.slug));
   }, [posts]);
 
-  return (
-    <>
-      <div className="w-80 lg:w-96">
-        <Recommendation post={post} />
-      </div>
-
-      <CustomModal />
-
-      <ArticleMain post={post} />
-    </>
-  );
+  return <></>;
 }
 
 export default Post;
