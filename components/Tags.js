@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Tags = () => {
   return (
-    <div className="flex flex-wrap gap-2 py-8 border-b">
+    <div className="flex flex-wrap gap-2 py-8">
       {tags.map((tag) => (
         <Link key={tag.id} href={`tag/${tag.tagLink}`}>
           <a className="text-xs text-gray-400 font-soehne px-5 py-1 border rounded-sm">

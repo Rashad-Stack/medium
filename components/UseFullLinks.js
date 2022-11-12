@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const UseFullLinks = () => {
   return (
-    <div className="flex flex-wrap gap-5 py-5">
+    <div className="flex flex-wrap gap-5 py-5 border-t">
       {links.map((link) => (
         <Link key={link.id} href={link.url}>
           <a className="text-sm text-gray-400">{link.name}</a>

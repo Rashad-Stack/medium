@@ -11,7 +11,7 @@ function ArticleMain({ post }) {
     <div className="flex-1 items-center justify-center">
       {post.length !== 0 ? (
         <div key={post.id} className="h-screen w-full p-8">
-          <div className="flex justify-between items-center mt-9 mb-5">
+          <div className="flex justify-between items-center mb-5">
             <div className="flex gap-4">
               <div className="h-12 w-12 grid rounded-full overflow-hidden">
                 <Image
