@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { AiFillPayCircle } from "react-icons/ai";
 import { BiBookBookmark } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
@@ -6,9 +7,17 @@ import { HiOutlineLink } from "react-icons/hi";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5";
 import Loader from "./Loader";
 
-function ArticleMain({ post }) {
+function ArticleMain({ heightRef, post }) {
+  const [height, setHeight] = useState();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setHeight(heightRef.current.clientHeight);
+    }, 100);
+  });
+
   return (
-    <div className="flex-1 items-center justify-center">
+    <div className="flex-1 items-center justify-center pt-16">
       {post.length !== 0 ? (
         <div key={post.id} className="h-screen w-full p-8">
           <div className="flex justify-between items-center mb-5">
@@ -22,16 +31,20 @@ function ArticleMain({ post }) {
                 />
               </div>
               <div className="flex-1 flex flex-col justify-center">
-                <p className="font-semibold">{post?.data?.author}</p>
+                <div className="flex gap-2 items-center">
+                  {" "}
+                  <p className="font-semibold">{post?.data?.author}</p>
+                  <button className="block md:hidden text-white bg-green-400 px-2 text-sm rounded-full highlight-none">
+                    Follow
+                  </button>
+                </div>
 
-                <div className=" flex gap-1 text-gray-500 text-sm font-medium">
-                  <span>
-                    {new Date(post.data?.postedOn).toLocaleString("en-US", {
-                      day: "numeric",
-                      month: "short",
-                    })}{" "}
-                    • {post.data?.postLength} min read
-                  </span>{" "}
+                <div className=" flex gap-1 text-gray-500 text-sm">
+                  {new Date(post.data?.postedOn).toLocaleString("en-US", {
+                    day: "numeric",
+                    month: "short",
+                  })}{" "}
+                  • {post.data?.postLength} min read{" "}
                   <span className=" flex items-center gap-1 text-green-700">
                     <AiFillPayCircle /> Listen
                   </span>
@@ -57,8 +70,10 @@ function ArticleMain({ post }) {
                 height={100}
               />
             </div>
-            <h1 className="font-bold text-3xl">{post?.data?.title}</h1>
-            <h4 className="font-medium font-mediumSerifItalic text-xl text-gray-500">
+            <h1 className="font-bold text-3xl font-gt-super">
+              {post?.data?.title}
+            </h1>
+            <h4 className="font-medium font-gt-super text-xl text-gray-500">
               <span className="block">
                 {post?.data?.author},{" "}
                 {new Date(post.data?.postedOn).toLocaleString("en-US", {
@@ -69,7 +84,7 @@ function ArticleMain({ post }) {
               </span>
               <span className="block">{post?.data?.brief}</span>
             </h4>
-            <p className="font-medium font-mediumSerif text-xl text-gray-500">
+            <p className="font-serif text-lg text-gray-400">
               {post?.data?.body}
             </p>
           </div>
