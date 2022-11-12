@@ -5,7 +5,7 @@ function Postcard({ post }) {
   return (
     <Link href={`post/${post?.id}`}>
       <a>
-        <div className="w-full md:w-3/5 flex items-center justify-between gap-3">
+        <div className="w-full flex items-center justify-between gap-3">
           <div className="w-3/5 flex flex-col">
             <div className="flex gap-4">
               <div className="grid place-items-center rounded-full overflow-hidden h-6 w-6">
@@ -16,7 +16,13 @@ function Postcard({ post }) {
                   className="object-contain"
                 />
               </div>
-              <p className="font-semibold">{post.data?.author}</p>
+              <p className="text-sm truncate font-soehne">
+                {post.data?.author}{" "}
+                {post.data?.groupName && (
+                  <span className="text-gray-400">in</span>
+                )}{" "}
+                {post.data?.groupName}
+              </p>
             </div>
             <h1 className="font-bold text-md md:text-xl text-ellipsis	max-h-14 overflow-hidden">
               {post.data?.title}
@@ -31,7 +37,7 @@ function Postcard({ post }) {
                   month: "short",
                 })}{" "}
                 • {post.data?.postLength} min read •
-                <span className="bg-neutral-100 p-1 rounded-full">
+                <span className="hidden sm:block bg-neutral-100 p-1 rounded-full">
                   {post.data?.category}
                 </span>
               </span>

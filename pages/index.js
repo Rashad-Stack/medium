@@ -1,9 +1,9 @@
-import { BlogPost, TrendingStory } from "../components";
+import { HomeStory, TrendingStory } from "../components";
 export default function Home() {
   return (
     <>
       <TrendingStory />
-      <BlogPost />
+      <HomeStory />
     </>
   );
 }

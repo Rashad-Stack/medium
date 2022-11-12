@@ -68,7 +68,7 @@ const Data = [
 
 const TrendingStory = () => {
   return (
-    <section id="trending" className="py-16 border-b">
+    <section id="trending" className="py-8 border-b">
       <div className="container max-w-screen-xl mx-auto px-10">
         <div className="flex items-center gap-3 mb-5">
           <span className="w-6 h-6 flex items-center justify-start border border-black rounded-full">
@@ -95,7 +95,9 @@ const TrendingStory = () => {
                       />
                       <p className="text-sm font-soehne">
                         {article?.authorName}{" "}
-                        <span className="text-gray-400">in</span>{" "}
+                        {article?.groupName && (
+                          <span className="text-gray-400">in</span>
+                        )}{" "}
                         {article?.groupName}
                       </p>
                     </div>
