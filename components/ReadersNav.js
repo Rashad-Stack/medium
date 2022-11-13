@@ -12,7 +12,7 @@ import SmallLogo from "../static/smallLogo.png";
 function ReadersNav() {
   const { currentUser, handleUserAuth } = useContext(MediumContext);
   return (
-    <aside className="hidden md:flex w-20 h-screen justify-center bg-white py-5 border-r">
+    <aside className="hidden md:flex w-20 h-screen justify-center bg-white py-5">
       <div className="fixed h-full flex flex-col justify-between items-center">
         <Link href="/">
           <a>

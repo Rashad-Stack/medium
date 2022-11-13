@@ -12,7 +12,7 @@ import UseFullLinks from "./UseFullLinks";
 
 function Recommendation({ post }) {
   return (
-    <aside className="hidden md:w-80 md:flex justify-center px-5 border-l">
+    <aside className="hidden md:w-80 md:flex justify-center px-5">
       <div className="mt-5">
         <SidebarSearchForm />
         <div className="flex flex-col mt-10">

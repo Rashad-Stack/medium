@@ -1,3 +1,4 @@
+export { default as ArticleFooter } from "./ArticleFooter";
 export { default as ArticleMain } from "./ArticleMain";
 export { default as BannerAnimation } from "./BannerAnimation";
 export { default as BlogPost } from "./BlogPost";
@@ -9,6 +10,7 @@ export { default as CustomModal } from "./CustomModal";
 export { default as HomeStory } from "./HomeStory";
 export { default as Layout } from "./Layout";
 export { default as Loader } from "./Loader";
+export { default as MediumRecommend } from "./MediumRecommend";
 export { default as MobileHeader } from "./MobileHeader";
 export { default as Notification } from "./Notification";
 export { default as Postcard } from "./Postcard";

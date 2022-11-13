@@ -5,6 +5,7 @@ import { BiBookBookmark } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { HiOutlineLink } from "react-icons/hi";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5";
+import ArticleFooter from "./ArticleFooter";
 import Loader from "./Loader";
 
 function ArticleMain({ heightRef, post }) {
@@ -17,9 +18,9 @@ function ArticleMain({ heightRef, post }) {
   });
 
   return (
-    <div className="flex-1 items-center justify-center pt-16">
+    <div className="flex-1 pt-16 border-r border-l">
       {post.length !== 0 ? (
-        <div key={post.id} className="h-screen w-full p-8">
+        <div key={post.id} className="w-full p-8">
           <div className="flex justify-between items-center mb-5">
             <div className="flex gap-4">
               <div className="h-12 w-12 grid rounded-full overflow-hidden">
@@ -92,6 +93,7 @@ function ArticleMain({ heightRef, post }) {
       ) : (
         <Loader />
       )}
+      <ArticleFooter />
     </div>
   );
 }
